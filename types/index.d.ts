@@ -16,7 +16,7 @@ export interface ValidationDirectiveBindings {
 /**
  * A key-value pair describing what validations to enforce to an input element, with respective parameters.
  */
-export declare type ValidationDirective = {
+export type ValidationDirective = {
     [key: string]: ValidationDirectiveBindings;
 };
 /**
@@ -25,7 +25,7 @@ export declare type ValidationDirective = {
  * String return signifies failed validation, which then will be used as the validation error message.
  * Promise return signifies asynchronous plugin behavior, with same behavior as Boolean or String.
  */
-export declare type ValidationProvider = (value: string, element: HTMLInputElement, params: StringKeyValuePair) => boolean | string | Promise<boolean | string>;
+export type ValidationProvider = (value: string, element: HTMLInputElement, params: StringKeyValuePair) => boolean | string | Promise<boolean | string>;
 /**
  * Contains default implementations for ASP.NET Core MVC validation attributes.
  */
@@ -116,6 +116,10 @@ export declare class ValidationService {
      */
     debounce: number;
     /**
+     * Callback triggered when form is submitted and valid
+     * */
+    afterValidation: ((form: HTMLFormElement) => void) | undefined;
+    /**
      * Registers a new validation plugin of the given name, if not registered yet.
      * Registered plugin validates inputs with data-val-[name] attribute, used as error message.
      * @param name
@@ -184,6 +188,12 @@ export declare class ValidationService {
      * @param input
      */
     removeError(input: HTMLInputElement): void;
+    /**
+     *
+     * @param input Validates a single input element
+     * @returns true on valid
+     */
+    validateElement(input: HTMLInputElement): Promise<boolean>;
     /**
      * Returns a validation Promise factory for an input element, using given validation directives.
      * @param input

@@ -7,111 +7,57 @@
 		exports["aspnetValidation"] = factory();
 	else
 		root["aspnetValidation"] = factory();
-})(window, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
-/******/ })
+})(self, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
 /************************************************************************/
-/******/ ({
-
-/***/ "./src/index.ts":
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/*! exports provided: MvcValidationProviders, ValidationService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MvcValidationProviders", function() { return MvcValidationProviders; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ValidationService", function() { return ValidationService; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MvcValidationProviders: () => (/* binding */ MvcValidationProviders),
+/* harmony export */   ValidationService: () => (/* binding */ ValidationService)
+/* harmony export */ });
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -121,7 +67,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -633,7 +579,12 @@ var ValidationService = /** @class */ (function () {
             e.preventDefault();
             validate.then(function (success) {
                 if (success) {
-                    form.submit();
+                    if (_this.afterValidation) {
+                        _this.afterValidation(form);
+                    }
+                    else {
+                        form.submit();
+                    }
                 }
             }).catch(function (error) {
                 console.log(error);
@@ -783,6 +734,16 @@ var ValidationService = /** @class */ (function () {
         this.renderSummary();
     };
     /**
+     *
+     * @param input Validates a single input element
+     * @returns true on valid
+     */
+    ValidationService.prototype.validateElement = function (input) {
+        var uid = this.getElementUID(input);
+        var validate = this.validators[uid];
+        return validate();
+    };
+    /**
      * Returns a validation Promise factory for an input element, using given validation directives.
      * @param input
      * @param directives
@@ -790,18 +751,21 @@ var ValidationService = /** @class */ (function () {
     ValidationService.prototype.createValidator = function (input, directives) {
         var _this = this;
         return function () { return __awaiter(_this, void 0, void 0, function () {
-            var _a, _b, _i, key, directive, provider, result, valid, error, resolution;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var _a, _b, _c, _i, key, directive, provider, result, valid, error, resolution;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
                     case 0:
-                        _a = [];
-                        for (_b in directives)
-                            _a.push(_b);
+                        _a = directives;
+                        _b = [];
+                        for (_c in _a)
+                            _b.push(_c);
                         _i = 0;
-                        _c.label = 1;
+                        _d.label = 1;
                     case 1:
-                        if (!(_i < _a.length)) return [3 /*break*/, 7];
-                        key = _a[_i];
+                        if (!(_i < _b.length)) return [3 /*break*/, 7];
+                        _c = _b[_i];
+                        if (!(_c in _a)) return [3 /*break*/, 6];
+                        key = _c;
                         directive = directives[key];
                         provider = this.providers[key];
                         if (!provider) {
@@ -821,7 +785,7 @@ var ValidationService = /** @class */ (function () {
                         return [3 /*break*/, 5];
                     case 3: return [4 /*yield*/, result];
                     case 4:
-                        resolution = _c.sent();
+                        resolution = _d.sent();
                         if (typeof resolution === 'boolean') {
                             valid = resolution;
                         }
@@ -829,13 +793,13 @@ var ValidationService = /** @class */ (function () {
                             valid = false;
                             error = resolution;
                         }
-                        _c.label = 5;
+                        _d.label = 5;
                     case 5:
                         if (!valid) {
                             this.addError(input, error);
                             return [2 /*return*/, false];
                         }
-                        _c.label = 6;
+                        _d.label = 6;
                     case 6:
                         _i++;
                         return [3 /*break*/, 1];
@@ -852,7 +816,7 @@ var ValidationService = /** @class */ (function () {
     ValidationService.prototype.bootstrap = function () {
         var _this = this;
         this.addMvcProviders();
-        window.addEventListener('load', function (event) {
+        window.addEventListener('load', function () {
             _this.scanMessages();
             _this.scanInputs();
         });
@@ -861,8 +825,7 @@ var ValidationService = /** @class */ (function () {
 }());
 
 
-
-/***/ })
-
-/******/ });
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
 });

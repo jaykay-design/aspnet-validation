@@ -426,6 +426,11 @@ export class ValidationService {
      */
     debounce = 300;
 
+    /** 
+     * Callback triggered when form is submitted and valid 
+     * */
+    afterValidation: ((form: HTMLFormElement) => void ) | undefined;
+
     /**
      * Registers a new validation plugin of the given name, if not registered yet.
      * Registered plugin validates inputs with data-val-[name] attribute, used as error message.
@@ -617,7 +622,12 @@ export class ValidationService {
             e.preventDefault();
             validate.then(success => {
                 if (success) {
+                    if(this.afterValidation){
+                        this.afterValidation(form);
+                    }
+                    else{
                     form.submit();
+                    }
                 }
             }).catch(error => {
                 console.log(error);
@@ -789,6 +799,17 @@ export class ValidationService {
     }
 
     /**
+     * 
+     * @param input Validates a single input element
+     * @returns true on valid
+     */
+    validateElement(input: HTMLInputElement): Promise<boolean> {
+        let uid = this.getElementUID(input);
+        let validate = this.validators[uid];
+        return validate();
+    }
+
+    /**
      * Returns a validation Promise factory for an input element, using given validation directives.  
      * @param input 
      * @param directives 
@@ -840,7 +861,7 @@ export class ValidationService {
     bootstrap() {
         this.addMvcProviders();
 
-        window.addEventListener('load', event => {
+        window.addEventListener('load', () => {
             this.scanMessages();
             this.scanInputs();
         });

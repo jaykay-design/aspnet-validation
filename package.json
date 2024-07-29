@@ -16,10 +16,10 @@
     "build": "webpack && webpack --config webpack.config.min.js"
   },
   "devDependencies": {
-    "ts-loader": "^5.3.1",
-    "typescript": "^3.2.1",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack": "^5",
+    "webpack-cli": "*"
   },
   "dependencies": {}
 }

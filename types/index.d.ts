@@ -166,6 +166,11 @@ export declare class ValidationService {
      */
     addInput(input: HTMLInputElement): void;
     /**
+     * Removes an input element to be managed and validated by the service.
+     * @param input
+     */
+    removeInput(input: HTMLInputElement): void;
+    /**
      * Scans the entire document for input elements to be validated.
      */
     private scanInputs;

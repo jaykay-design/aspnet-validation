@@ -678,8 +678,10 @@ export class ValidationService {
         }
 
         let delay;
-        let cb = e => {
+        let cb = () => {
             let validate = this.validators[uid];
+            if(!validate) return;
+
             clearTimeout(delay);
             delay = setTimeout(validate, this.debounce);
         };
@@ -693,6 +695,22 @@ export class ValidationService {
 
         this.elementEvents[uid] = cb;
     }
+
+    /**
+     * Removes an input element to be managed and validated by the service.
+     * @param input 
+     */
+    removeInput(input: HTMLInputElement) {
+        let uid = this.getElementUID(input);
+
+        if (!this.elementEvents[uid]) {
+            return;
+        }
+
+        delete this.elementEvents[uid];
+        delete this.validators[uid];
+    }
+
 
     /**
      * Scans the entire document for input elements to be validated.

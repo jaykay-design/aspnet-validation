@@ -628,8 +628,10 @@ var ValidationService = /** @class */ (function () {
             return;
         }
         var delay;
-        var cb = function (e) {
+        var cb = function () {
             var validate = _this.validators[uid];
+            if (!validate)
+                return;
             clearTimeout(delay);
             delay = setTimeout(validate, _this.debounce);
         };
@@ -641,6 +643,18 @@ var ValidationService = /** @class */ (function () {
             input.addEventListener('input', cb);
         }
         this.elementEvents[uid] = cb;
+    };
+    /**
+     * Removes an input element to be managed and validated by the service.
+     * @param input
+     */
+    ValidationService.prototype.removeInput = function (input) {
+        var uid = this.getElementUID(input);
+        if (!this.elementEvents[uid]) {
+            return;
+        }
+        delete this.elementEvents[uid];
+        delete this.validators[uid];
     };
     /**
      * Scans the entire document for input elements to be validated.

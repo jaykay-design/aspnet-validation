@@ -758,6 +758,19 @@ var ValidationService = /** @class */ (function () {
         return validate();
     };
     /**
+     *
+     * @param form Validates a form. No callback is issued.
+     * @returns true on valid
+     */
+    ValidationService.prototype.validateForm = function (form) {
+        var formUID = this.getElementUID(form);
+        var validate = this.getFormValidationTask(formUID);
+        if (!validate) {
+            return Promise.resolve(false);
+        }
+        return validate;
+    };
+    /**
      * Returns a validation Promise factory for an input element, using given validation directives.
      * @param input
      * @param directives

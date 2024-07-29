@@ -828,6 +828,21 @@ export class ValidationService {
     }
 
     /**
+     * 
+     * @param form Validates a form. No callback is issued.
+     * @returns true on valid
+     */
+    validateForm(form: HTMLFormElement): Promise<boolean> {
+        const formUID = this.getElementUID(form);
+        const validate = this.getFormValidationTask(formUID);
+        if (!validate) {
+            return Promise.resolve(false);
+        }
+
+        return validate;
+    }
+
+    /**
      * Returns a validation Promise factory for an input element, using given validation directives.  
      * @param input 
      * @param directives 

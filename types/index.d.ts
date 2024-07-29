@@ -200,6 +200,12 @@ export declare class ValidationService {
      */
     validateElement(input: HTMLInputElement): Promise<boolean>;
     /**
+     *
+     * @param form Validates a form. No callback is issued.
+     * @returns true on valid
+     */
+    validateForm(form: HTMLFormElement): Promise<boolean>;
+    /**
      * Returns a validation Promise factory for an input element, using given validation directives.
      * @param input
      * @param directives

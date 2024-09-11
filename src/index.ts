@@ -709,6 +709,14 @@ export class ValidationService {
 
         delete this.elementEvents[uid];
         delete this.validators[uid];
+
+        let formUID = this.getElementUID(input.form);
+        if (this.formInputs[formUID]) {
+            let index = this.formInputs[formUID].indexOf(uid);
+            if (index > -1) {
+                this.formInputs[formUID].splice(index, 1);
+            }
+        }
     }
 
 
